@@ -15,6 +15,7 @@
             }
 
             body {
+                background: #FEFFF5;
                 width: 100%;
                 height: 100%;
                 display: flex;
@@ -23,24 +24,78 @@
             }
 
             form {
+                background: white;
+                padding: 2em;
+                box-shadow: 0 0 .5em #ABABAB;
+                border-radius: .2em;
+                display: flex;
+                flex-direction: column;
+                gap: 1em;
+                width: 70ch;
+            }
+
+            form div {
                 display: flex;
                 flex-direction: column;
             }
 
             textarea {
+                min-height: 20ch;
                 resize: none;
+            }
+
+            button {
+                background: #660541;
+                border-style: solid;
+                border-color: #660541;
+                color: white;
+                padding: 1em;
+                border-radius: .2em;
+            }
+
+            button:active {
+                background: #A82B78;
+            }
+
+            .input {
+                border-style: none none solid none;
+                border-width: 2px;
+                border-color: #660541;
+            }
+
+            .input:focus {
+                border-style: solid;
+                border-width: .5px;
+                border-bottom-width: 2px;
             }
 
         </style>
     </head>
     <body>
         <form id="postForm">
-            <input type="text">
-            <textarea name="" id="" cols="30" rows="10"></textarea>
+            <div>
+                <label>Identifier</label>
+                <input type="text" class="input">
+            </div>
+            <div>
+                <label>Idea</label>
+                <textarea class="input"></textarea>
+            </div>
+
             <button>Post</button>
         </form>
         <script>
-            
+            function create(input) {
+
+            }
+
+            function listen() {
+
+            }
+
+            function insert(input) {
+
+            }
         </script>
     </body>
 </html>
