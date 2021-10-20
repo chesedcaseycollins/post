@@ -2,99 +2,32 @@
 <html lang="en-US">
     <head>
         <title>Post</title>
-        <style>
-            * {
-                box-sizing: border-box;
-                margin: 0;
-                padding: 0;
-            }
-
-            html {
-                width: 100%;
-                height: 100%;
-            }
-
-            body {
-                background: #FEFFF5;
-                width: 100%;
-                height: 100%;
-                display: flex;
-                justify-content: center;
-                align-items: center;
-            }
-
-            form {
-                background: white;
-                padding: 2em;
-                box-shadow: 0 0 .5em #ABABAB;
-                border-radius: .2em;
-                display: flex;
-                flex-direction: column;
-                gap: 1em;
-                width: 70ch;
-            }
-
-            form div {
-                display: flex;
-                flex-direction: column;
-            }
-
-            textarea {
-                min-height: 20ch;
-                resize: none;
-            }
-
-            button {
-                background: #660541;
-                border-style: solid;
-                border-color: #660541;
-                color: white;
-                padding: 1em;
-                border-radius: .2em;
-            }
-
-            button:active {
-                background: #A82B78;
-            }
-
-            .input {
-                border-style: none none solid none;
-                border-width: 2px;
-                border-color: #660541;
-            }
-
-            .input:focus {
-                border-style: solid;
-                border-width: .5px;
-                border-bottom-width: 2px;
-            }
-
-        </style>
     </head>
     <body>
-        <form id="postForm">
-            <div>
-                <label>Identifier</label>
-                <input type="text" class="input">
-            </div>
-            <div>
-                <label>Idea</label>
-                <textarea class="input"></textarea>
-            </div>
-
-            <button>Post</button>
-        </form>
-        <script>
-            function create(input) {
-
+        <section id="wrapper">
+            <input type="text" id="type">
+            <button id="btn">Click</button>
+        </section>
+        <script >
+            document.getElementById("btn").onclick = function() {
+                let postPara = document.createElement("p");
+                create(postPara);
             }
 
-            function listen() {
-
+            function insert(para) {
+                let wrapper = document.getElementById("wrapper");
+                wrapper.appendChild(para);
             }
 
-            function insert(input) {
+            function addText(element) {
+                let post = document.getElementById("type").value;
+                let text = document.createTextNode(post);
+                element.appendChild(text);
+            }
 
+            function create(post) {
+                addText(post);
+                insert(post);
             }
         </script>
     </body>
